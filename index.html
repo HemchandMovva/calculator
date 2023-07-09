@@ -1,0 +1,228 @@
+<html>
+
+	<head>	<title> calculator </title>
+	
+
+	<style>
+
+		.button{	height:70px;
+				width:70px;
+				font-size:25px;
+				color:#000000;
+				background-color:#008080;
+				border-radius:20px;
+				
+				
+		}
+		
+		.button:hover{	background-color:#9FE2BF;
+		}
+		
+		.disp{	height:70px;
+			border: 2px solid red;
+			width:368px;
+			font-size:20px;
+			position:absolute;
+			left:70px;
+			top:50px;
+			background-color:#90EE90;
+		}
+		table{	position:absolute;
+			top:150px;
+			left:70px;
+		}
+
+		.border{	border: 2px solid red;
+				width: 500px;
+				height: 500px;
+				position: absolute;
+				left:330px;
+				top:60px;
+				background-color:cyan;
+		}
+		#ans{	background-color:#90EE90;
+		}
+
+		#ans:hover{ background-color: #9fe2bf;
+		}
+		
+		body{	background-image:url(back.jpg);
+			background-size: 100% 100%;
+			background-repeat:no-repeat;
+		}
+
+		.left{	position: absolute;
+			left:100px;
+			top:50px;
+
+			writing-mode:vertical-lr;
+			text-orientation:upright;
+
+			font-family:Algerian;
+			font-size:45px;
+		}
+				
+	</style>
+
+	</head>
+
+
+	<body>
+		
+		<h1 class="left"> CALCULATOR </h1>
+		
+		<div class="border">		
+
+		<input type="text" class="disp" id="display" disabled>
+
+		<table>
+
+			
+
+			<tr>
+				<td> <input type="button" value="7" id="7" class="button" onclick="name7()">  </input> </td>
+				<td> <input type="button" value="8" id="8" class="button" onclick="name8()"> </input> </td>
+				<td> <input type="button" value="9" id="9" class="button" onclick="name9()"> </input> </td>
+				<td> <input type="button" value="+" id="+" class="button" onclick="namePlus()"> </input> </td>
+				<td> <input type="button" value="-" id="-" class="button" onclick="nameMinus()"> </input> </td>
+				
+			</tr>
+
+			<tr>
+				<td> <input type="button" value="4" id="4" class="button" onclick="name4()">  </input> </td>
+				<td> <input type="button" value="5" id="5" class="button" onclick="name5()">  </input> </td>
+				<td> <input type="button" value="6" id="6" class="button" onclick="name6()">  </input> </td>
+				<td> <input type="button" value="*" id="*" class="button" onclick="nameMul()"> </input> </td>
+				<td> <input type="button" value="/" id="/" class="button" onclick="nameDiv()"> </input> </td>
+			</tr>
+
+			<tr>
+				<td> <input type="button" value="1" id="1" class="button" onclick="name1()">  </input> </td>
+				<td> <input type="button" value="2" id="2" class="button" onclick="name2()">  </input> </td>
+				<td> <input type="button" value="3" id="3" class="button" onclick="name3()">  </input> </td>
+				<td> <input type="button" value="%" id="%" class="button" onclick="nameRem()"> </input> </td>
+				<td> <input type="button" value="del" id="del" class="button" onclick="nameDel()"> </input> </td>
+			</tr>
+
+			<tr>
+				<td> <input type="button" value="0"  id="0"  class="button" onclick="name0()">   </input> </td>
+				<td> <input type="button" value="00" id="00" class="button" onclick="name00()">   </input> </td>
+				<td> <input type="button" value="."  id="."  class="button" onclick="nameDot()">   </input> </td>
+				<td> <input type="button" value="clear" id="clear" class="button" onclick="nameClear()"> </input> </td>
+				<td> <input type="button" value="=" id="ans" class="button" onclick="nameAns()"> </input> </td>
+			</tr>
+
+			
+		</table>
+
+		</div>
+		
+		<script>
+			var ans=0;
+			var S="";
+			function name7(){
+				S+="7";
+				document.getElementById("display").value=(S);
+			}
+			function name8(){
+				S+="8";
+				document.getElementById("display").value=(S);
+			}
+			function name9(){
+				S+="9";
+				document.getElementById("display").value=(S);
+			}
+			function name4(){
+				S+="4";
+				document.getElementById("display").value=(S);
+			}
+			function name5(){
+				S+="5";
+				document.getElementById("display").value=(S);
+			}
+			function name6(){
+				S+="6";
+				document.getElementById("display").value=(S);
+			}
+			function name1(){
+				S+="1";
+				document.getElementById("display").value=(S);
+			}
+			function name2(){
+				S+="2";
+				document.getElementById("display").value=(S);
+			}
+			function name3(){
+				S+="3";
+				document.getElementById("display").value=(S);
+			}
+			function name00(){
+				S+="00";
+				document.getElementById("display").value=(S);
+			}
+			function name0(){
+				S+="0";
+				document.getElementById("display").value=(S);
+			}
+			function namePlus(){
+				if(!"*%-+/.".includes(S.charAt (S.length-1) )){
+					S+="+";
+					document.getElementById("display").value=(S);
+				}
+			}
+			function nameMinus(){
+				if(!"*%-+/.".includes(S.charAt (S.length-1) )){
+					S+="-";
+					document.getElementById("display").value=(S);
+				}
+			}
+			function nameMul(){
+				if(!"*%-+/.".includes(S.charAt (S.length-1) )){
+					S+="*";
+					document.getElementById("display").value=(S);
+				}
+			}
+			function nameDiv(){
+				if(!"*%-+/.".includes(S.charAt (S.length-1) )){
+					S+="/";
+					document.getElementById("display").value=(S);
+				}
+			}
+			function nameRem(){
+				if(!"*%-+/.".includes(S.charAt (S.length-1) )){
+					S+="%";
+					document.getElementById("display").value=(S);
+				}
+			}
+			function nameDot(){
+				if(!"*%-+/.".includes(S.charAt (S.length-1) )){
+					S+=".";
+					document.getElementById("display").value=(S);
+				}
+			}
+			function nameDel(){
+				S=S.substring(0,S.length-1);
+				document.getElementById("display").value=(S);
+			}
+			function nameClear(){
+				S="";
+				ans=0;
+				document.getElementById("display").value=(S);
+			}
+			function nameAns(){
+				try{
+				if(S!=""){	
+					S=String(eval(S));
+					document.getElementById("display").value=(S);
+				}
+				
+				}
+				catch(err){
+				document.getElementById("display").value="Invalid Input!";
+				}
+			}
+		</script>
+
+		
+	</body>
+</html>
